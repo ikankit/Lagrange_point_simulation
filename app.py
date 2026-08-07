@@ -25,7 +25,7 @@ with st.sidebar:
     st.divider()
     st.markdown(" 🔄 Simulation")
     steps=st.slider(
-        "simulation speed",
+        "Total simulation steps",
         min_value=100,
         max_value=100000
         )
