@@ -51,7 +51,7 @@ if run:
     
     with st.spinner("Running simulation"):
         
-        sun_traj, earth_traj, craft_traj, lag_points=run_simulation(
+        object1_traj, object2_traj, craft_traj, lag_points=run_simulation(
             selected_point=selected_point,
             steps=steps
         )
@@ -61,8 +61,8 @@ if run:
         st.subheader("3D simulation ")
         
         skip=10
-        s=sun_traj[::skip]
-        e=earth_traj[::skip]
+        s=object1_traj[::skip]
+        e=object2_traj[::skip]
         c=craft_traj[::skip]
         fig=go.Figure()
         
