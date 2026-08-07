@@ -79,7 +79,7 @@ if run:
                 x=[],y=[],z=[],
                 mode="lines",
                 line=dict(color="yellow",width=3),
-                name="Sun Orbit"
+                name="Object1 Orbit"
             )
         )
         
@@ -89,7 +89,7 @@ if run:
                 x=[],y=[],z=[],
                 mode="lines",
                 line=dict(color="blue",width=3),
-                name="Earth Orbit"
+                name="Object2 Orbit"
             )
         )
         
@@ -110,7 +110,7 @@ if run:
                 marker=dict(
                     size=14,color="yellow"
                     ),
-                name="sun"
+                name="Object1"
             )
         )
         
@@ -121,7 +121,7 @@ if run:
                 marker=dict(
                     size=9,color="blue"
                     ),
-                name="earth"
+                name="Object2"
             )
         )
         
