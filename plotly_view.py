@@ -3,8 +3,8 @@ import plotly.graph_objects as go
 
 
 def create_plotly_animation(
-    sun_hist,
-    earth_hist,
+    object1_hist,
+    object2_hist,
     probe_hist,
     lag_points,
     selected_point="L1"
@@ -12,8 +12,8 @@ def create_plotly_animation(
 
     skip = 10
 
-    s = sun_hist[::skip]
-    e = earth_hist[::skip]
+    s = object1_hist[::skip]
+    e = object2_hist[::skip]
     p = probe_hist[::skip]
 
     colors = {
@@ -73,7 +73,7 @@ def create_plotly_animation(
                 size=18,
                 color="yellow"
             ),
-            name="Sun"
+            name="Object1"
         )
     )
 
@@ -88,7 +88,7 @@ def create_plotly_animation(
                 size=10,
                 color="deepskyblue"
             ),
-            name="Earth"
+            name="Object2"
         )
     )
 
