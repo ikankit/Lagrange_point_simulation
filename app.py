@@ -150,17 +150,17 @@ if run:
         )
         
         #craft end
-        fig.add_trace(
-            go.Scatter3d(
-                x=[c[-1,0]],y=[c[-1,1]],z=[c[-1,2]],
-                mode="markers+text",
-                text=["End"],
-                textposition="top center",
-                marker=dict(
-                    size=6,color="white"),
-                name="End"
-            )
-        )
+        #fig.add_trace(
+           # go.Scatter3d(
+            #    x=[c[-1,0]],y=[c[-1,1]],z=[c[-1,2]],
+             #   mode="markers+text",
+              #  text=["End"],
+               # textposition="top center",
+              #  marker=dict(
+                  #  size=6,color="white"),
+             #   name="End"
+         #   )
+      #  )
         #Lag points
         px, py, pz = lag_points[selected_point]
         
