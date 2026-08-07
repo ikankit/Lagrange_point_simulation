@@ -108,7 +108,7 @@ if run:
             go.Scatter3d(x=[s[0,0]],y=[s[0,1]],z=[s[0,2]],
                 mode="markers",
                 marker=dict(
-                    size=10,color="yellow"
+                    size=14,color="yellow"
                     ),
                 name="sun"
             )
@@ -144,7 +144,7 @@ if run:
                 text=["Start"],
                 textposition="top center",
                 marker=dict(
-                    size=6,color="lime"),
+                    size=2,color="lime"),
                 name="Start"
             )
         )
@@ -173,7 +173,7 @@ if run:
                 text=[selected_point],
                 textposition="top center",
                 marker=dict(
-                    size=9,
+                    size=5,
                     color=colors[selected_point],
                     symbol="x"
                 ),
