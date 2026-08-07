@@ -29,7 +29,7 @@ def run_simulation(selected_point,steps=steps):
 
     )
 
-    bodies = [sun, earth, spacecraft]
+    bodies = [object1, object2, spacecraft]
 
     object1_traj = np.zeros((steps,3))
     object2_traj = np.zeros((steps,3))
