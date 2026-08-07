@@ -34,7 +34,7 @@ def create_plotly_animation(
             z=[],
             mode="lines",
             line=dict(color="yellow", width=4),
-            name="Sun Orbit"
+            name="Object1 Orbit"
         )
     )
 
@@ -46,7 +46,7 @@ def create_plotly_animation(
             z=[],
             mode="lines",
             line=dict(color="cyan", width=4),
-            name="Earth Orbit"
+            name="Object2 Orbit"
         )
     )
 
