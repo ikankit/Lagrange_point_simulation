@@ -11,13 +11,13 @@ from Initial_conditions import G, R, mu, dt,steps
 
 def run_simulation(selected_point,steps=steps):
 
-    sun, earth = create_bodies()
+    object1, object2 = create_bodies()
 
     lag_points = calc_lagp(mu, R)
 
     selected_point = np.array(lag_points[selected_point], dtype=float)
 
-    omega = np.sqrt(G * (sun.mass + earth.mass) / R**3)
+    omega = np.sqrt(G * (object1.mass + earth.mass) / R**3)
 
     craft_velocity = lagrange_velocity(selected_point, omega)
 
