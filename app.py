@@ -411,7 +411,7 @@ if st.session_state.simulation_done:
 
         # EFFECTIVE POTENTIAL
         st.markdown("---")
-        st.markdown(" 🌌 Effective Potential")
+        st.markdown(" 🌌 Effective Potential Plot")
         potential_fig = create_effective_potential(mu)
 
         st.pyplot(potential_fig,use_container_width=True)
