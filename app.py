@@ -468,8 +468,14 @@ if st.session_state.simulation_done:
 # BEFORE SIMULATION
 
 else:
+    st.markdown("""
+    <h2>Welcome</h2> 
+    <p>Please follow the following steps:</p>
+    <p>Step1:Open the sidebar at the top left corner</p>
+    <p>Step2:Select a Lagrange point </p>
+    <p>Step3:In Display option select the checkbox u want to see </p>
+    <p>Step4:click ▶ Run Simulation to start.</p>
 
-    st.info("Welcome Please follow the following steps"
-        "Select a Lagrange point and click "
-        "▶ Run Simulation to start."
-    )
+
+    
+""",unsafe_allow_html=True)
