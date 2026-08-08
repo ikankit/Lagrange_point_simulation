@@ -23,6 +23,8 @@ st.title(
 )
 st.markdown("---")
 
+status=st.empty()
+
 if "simulation_done" not in st.session_state:
     st.session_state.simulation_done = False
 
@@ -462,10 +464,11 @@ if st.session_state.simulation_done:
         st.write(f"**Displayed Frames:** "f"{len(frames)}")
         st.write(f"**Selected Lagrange Point:** "f"{selected_point}")
         st.divider()
-        st.success(
+        status.success(
             "Simulation Complete ✓"
         )
 # BEFORE SIMULATION
+
 
 else:
     st.markdown("""
