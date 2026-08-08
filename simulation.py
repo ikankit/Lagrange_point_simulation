@@ -11,13 +11,13 @@ from Initial_conditions import G, R, mu, dt,steps
 
 def run_simulation(selected_point,steps=steps):
 
-    object1, object2 = create_bodies()
+    sun, earth = create_bodies()
 
     lag_points = calc_lagp(mu, R)
 
     selected_point = np.array(lag_points[selected_point], dtype=float)
 
-    omega = np.sqrt(G * (object1.mass + object2.mass) / R**3)
+    omega = np.sqrt(G * (sun.mass + earth.mass) / R**3)
 
     craft_velocity = lagrange_velocity(selected_point, omega)
 
@@ -29,18 +29,18 @@ def run_simulation(selected_point,steps=steps):
 
     )
 
-    bodies = [object1, object2, spacecraft]
+    bodies = [sun, earth, spacecraft]
 
-    object1_traj = np.zeros((steps,3))
-    object2_traj = np.zeros((steps,3))
+    sun_traj = np.zeros((steps,3))
+    earth_traj = np.zeros((steps,3))
     craft_traj = np.zeros((steps,3))
 
     for i in range(steps):
 
         velocity_verlet(bodies, dt)
 
-        object1_traj[i] = object1.position
-        object2_traj[i] = object2.position
+        sun_traj[i] = sun.position
+        earth_traj[i] = earth.position
         craft_traj[i] = spacecraft.position
 
-    return object1_traj, object2_traj, craft_traj, lag_points
+    return sun_traj, earth_traj, craft_traj, lag_points
