@@ -5,6 +5,7 @@ import plotly.graph_objects as go
 from simulation import run_simulation
 import Initial_conditions 
 from Effective_potential import create_effective_potential
+from Lagrange_plot import Lagrange_point_plot
 
 steps=Initial_conditions.steps
 mu=Initial_conditions.mu
@@ -349,7 +350,7 @@ if st.session_state.simulation_done:
     # FIGURE LAYOUT
 
     fig.update_layout(
-        height=700,
+        height=800,
         scene=dict(
             bgcolor="black",
             xaxis=dict(title="X",range=[-25, 25]),
@@ -404,16 +405,24 @@ if st.session_state.simulation_done:
     )
     # MAIN COLUMNS
 
-    left, right = st.columns([6.2, 2])
+    left, right = st.columns([7.2, 1])
     # LEFT SIDE
 
     with left:
         st.markdown(" 🌌 3D Simulation" )
-        st.plotly_chart( fig,use_container_width=True,config={"scrollZoom": True,"displayModeBar": True})
+        st.plotly_chart( fig,use_container_width=True,config={"scrollZoom": True,"displayModeBar": True,"responsive": True})
+        
+        #Plot of position of lagrange point
+        st.markdown("---")
+        st.markdown("Position of Lagrange points")
+        Lagrange_fig=Lagrange_point_plot(mu)
+        
+        st.pyplot(Lagrange_fig,use_container_width=True)
+        plt.close(Lagrange_fig)
 
         # EFFECTIVE POTENTIAL
         st.markdown("---")
-        st.markdown(" 🌌 Effective Potential Plot")
+        st.markdown(" 🌌 Effective Potential")
         potential_fig = create_effective_potential(mu)
 
         st.pyplot(potential_fig,use_container_width=True)
@@ -466,9 +475,9 @@ if st.session_state.simulation_done:
         st.divider()
         status.success(
             "Simulation Complete ✓"
+            
         )
 # BEFORE SIMULATION
-
 
 else:
     st.markdown("""
