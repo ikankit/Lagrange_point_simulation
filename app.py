@@ -14,7 +14,7 @@ mu=Initial_conditions.mu
 
 st.set_page_config(
     page_title="Lagrange Point Simulation",
-    page_icon="🌌",
+    page_icon="",
     layout="wide"
 )
 
@@ -409,7 +409,7 @@ if st.session_state.simulation_done:
     # LEFT SIDE
 
     with left:
-        st.markdown(" 🌌 3D Simulation" )
+        st.markdown("  3D Simulation" )
         st.plotly_chart( fig,use_container_width=True,config={"scrollZoom": True,"displayModeBar": True,"responsive": True})
         
         #Plot of position of lagrange point
@@ -422,7 +422,7 @@ if st.session_state.simulation_done:
 
         # EFFECTIVE POTENTIAL
         st.markdown("---")
-        st.markdown(" 🌌 Effective Potential")
+        st.markdown("  Effective Potential")
         potential_fig = create_effective_potential(mu)
 
         st.pyplot(potential_fig,use_container_width=True)
@@ -432,7 +432,7 @@ if st.session_state.simulation_done:
        
         # ZERO VELOCITY CURVES
         st.markdown("---")
-        st.markdown( "🚫 Zero-Velocity Curves" )
+        st.markdown( " Zero-Velocity Curves" )
         
         zvc_fig = create_zvc_plot(mu)
 
@@ -442,11 +442,11 @@ if st.session_state.simulation_done:
     # RIGHT INFORMATION PANEL
 
     with right:
-        st.markdown("ℹ️ Information")
+        st.markdown("Information")
         st.divider()
         
         # SELECTED LAGRANGE POINT
-        st.markdown(" 📍 Selected Point")
+        st.markdown("  Selected Point")
         st.write(f"**Point:** {selected_point}")
         st.write(f"**X:** {px:.5f}")
         st.write( f"**Y:** {py:.5f}")
@@ -455,7 +455,7 @@ if st.session_state.simulation_done:
         
         # SPACECRAFT
 
-        st.markdown( "🚀 craft" )
+        st.markdown( " craft" )
 
         st.write(f"**Initial X:** "f"{c[0, 0]:.5f}")
         st.write(f"**Initial Y:** " f"{c[0, 1]:.5f}" )
@@ -468,7 +468,7 @@ if st.session_state.simulation_done:
         
         # SIMULATION INFORMATION
 
-        st.markdown("🔄 Simulation" )
+        st.markdown(" Simulation" )
         st.write( f"**Steps:** {steps}")
         st.write(f"**Displayed Frames:** "f"{len(frames)}")
         st.write(f"**Selected Lagrange Point:** "f"{selected_point}")
